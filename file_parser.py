@@ -7,7 +7,7 @@ Handles parsing, validation, and data extraction from uploaded files.
 import pandas as pd
 import re
 from datetime import datetime
-from PyPDF2 import PdfReader
+from pypdf import PdfReader
 
 
 def parse_csv(file):
@@ -268,4 +268,5 @@ def clean_amount(amount_str):
         cleaned = str(amount_str).replace('₹', '').replace('$', '').replace('Rs.', '').replace('Rs', '').replace(',', '').strip()
         return float(cleaned)
     except:
+
         return 0.0
