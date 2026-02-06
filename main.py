@@ -16,7 +16,31 @@ from charts import create_expense_pie_chart, create_income_expense_bar_chart, cr
 from file_parser import parse_csv, parse_pdf, validate_csv_structure, validate_pdf_transactions
 from chatbot import get_financial_context, get_chatbot_response, get_quick_insight
 
+import streamlit as st
 
+st.set_page_config(layout="wide")
+
+st.markdown("""
+<style>
+/* Hide Streamlit footer */
+footer {
+    display: none !important;
+}
+
+/* Hide "Made with Streamlit" block */
+div[data-testid="stFooter"] {
+    display: none !important;
+}
+
+/* Hide top menu & deploy button */
+#MainMenu {
+    display: none !important;
+}
+header {
+    display: none !important;
+}
+</style>
+""", unsafe_allow_html=True)
 # Hide Streamlit default header, footer, and menu
 st.markdown("""
     <style>
