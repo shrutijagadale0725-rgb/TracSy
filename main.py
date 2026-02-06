@@ -17,6 +17,19 @@ from file_parser import parse_csv, parse_pdf, validate_csv_structure, validate_p
 from chatbot import get_financial_context, get_chatbot_response, get_quick_insight
 
 
+# Hide Streamlit default header, footer, and menu
+st.markdown("""
+    <style>
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+""", unsafe_allow_html=True)
+
+st.set_page_config(
+    page_title="Tracsy - Personal Budget Monitor",
+    page_icon="💰",
+    layout="wide"
+)
 # ─────────────────────────────────────────────────
 st.set_page_config(
     page_title="Personal Budget Monitor",
